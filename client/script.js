@@ -590,16 +590,6 @@ function keyupGetAndSetInputValue(event,name,objectName){
 // }
 
 function printPage() {
-    // Yazdırma işlemi başladığında nav elementini gizle
-    var navElement = document.querySelector('nav');
-    navElement.style.display = 'none';
-
-    // Yazdırma işlemi bittikten sonra nav elementini tekrar göster
-    window.onafterprint = function () {
-        navElement.style.display = 'block';
-    };
-
-    // Sayfayı yazdır
     window.print();
 }
 
