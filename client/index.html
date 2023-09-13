@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./indexstyle.css">
+    
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a class="a1" onclick="printPage()">Yazdır <i class="fa fa-print"></i></a></li>
+            <li><a onclick="showEditForm()" class="cursor">Cv Düzenle <i class="fa fa-edit"></i></a></li>
+
+        </ul>
+    </nav>
+    <div id="main">
+        <div id="blog" style="display: none;">
+
+
+            <div class="page">
+                <div class="container">
+                    <div class="left-container">
+                        <div class="profile-img">
+                            <img id="avatar" alt="">
+                        </div>
+                        <div class="left-my-header">
+                            <h1 id="name" class="my-header"></h1>
+                        </div>
+                        <div class="left-my-header">
+                            <h1 id="title" class="my-header"></h1>
+                        </div>
+                        <div class="left-header">
+                            <h1>CONTACT</h1>
+                            <div class="contact">
+
+                                <!-- <a href="https://tr.linkedin.com/" target="_blank"> <i class="fa fa-linkedin social-media">
+        
+                                    </i></a>
+                                <a href="https://youtube.com/" target="_blank"> <i class="fa fa-youtube social-media">
+        
+                                    </i></a>
+                                <a href="https://instagram.com/" target="_blank"> <i class="fa fa-instagram    social-media">
+        
+                                    </i></a>
+                                <a href="https://github.com/" target="_blank"> <i class="fa fa-github social-media">
+        
+                                    </i></a> -->
+
+
+                                <ul class="personel-ul">
+                                    <li>
+                                        <i class="fa fa-calendar-days"></i>
+                                        <span id="dateOfBirth"></span>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-phone"></i>
+                                        <span id="phone"></span>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-envelope"></i>
+                                        <span id="mail"></span>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-location-dot"></i>
+                                        <span id="address"></span>
+                                    </li>
+                                </ul>
+                                <h1>FOLLOW ME</h1>
+                                <ul id="social-medias" class="ul-social-media">
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="left-header">
+                            <h1><span><i class="fa fa-user"></i></span> ABOUT ME</h1>
+                            <div id="aboutMe" class="about">
+
+                            </div>
+                        </div>
+                        <div class="left-header">
+                            <h1>SKILLS</h1>
+                            <div class="skills">
+
+                                <ul id="skills">
+                                    <div class="div-skills">
+                                        <!-- <li>
+                                            <p>C#</p>
+                                            <progress id="progress" value="32" max="100">32%</progress>
+                                        </li> -->
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="left-header" id="language">
+                            <h1><span><i class="fa fa-language"></i></span> LANGUAGE</h1>
+                            <!-- <div class="language" >
+                                <p>İngilizce</p>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="right-container">
+                        <div class="right-header-1" id="workexperience">
+
+                            <!-- <div class="workexperience">
+                                <h4>UNVANINIZI BURAYA GIRINIZ</h4>
+                                <h5>Sirket Ismı</h5>
+                                <h5>Calıstıgınız Yıllar</h5>
+                                <p class="workexperience-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga,
+                                    quo tenetur. Ab, quibusdam iste obcaecati iusto temporibus atque nam quae qui quaerat sed
+                                    veniam distinctio aut quidem pariatur ipsa at! lorem Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Beatae repellendus suscipit magnam enim quidem repellat voluptatibus,
+                                    temporibus inventore ipsum explicabo! Tenetur cumque doloribus neque! Quasi reiciendis
+                                    eligendi illo sed cumque?</p>
+                            </div> -->
+
+                        </div>
+                        <div class="right-header" id="educations">
+
+                            <!-- <div class="education">
+                                <h4>UNIVERSITE ADINI BURAYA YAZINIZ</h4>
+                                <p>Bolum Adı</p>
+                                <p>2019-2023</p>
+                            </div>
+                            <div class="education">
+                                <h4>UNIVERSITE ADINI BURAYA YAZINIZ</h4>
+                                <p>Bolum Adı</p>
+                                <p>2019-2023</p>
+                            </div>
+                            <div class="education">
+                                <h4>UNIVERSITE ADINI BURAYA YAZINIZ</h4>
+                                <p>Bolum Adı</p>
+                                <p>2019-2023</p>
+                            </div> -->
+
+                        </div>
+                        <div class="right-header" id="certificate">
+                            <!-- <div class="certificate" >
+                                <p>2019 Sertifika adını buraya yazınız</p>
+                                <p>2019 Sertifika adını buraya yazınız</p>
+                                <p>2019 Sertifika adını buraya yazınız</p>
+                                <p>2019 Sertifika adını buraya yazınız</p>
+                            </div> -->
+                        </div>
+                        <div class="right-header" id="reference">
+
+                            <!-- <div class="reference">
+                                <h4>Taner Saydam</h4>
+                                <p>Software Trainer</p>
+                                <p>0555 444 44 44</p>
+                            </div> -->
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--  ----------------------------------------------------------------------------------------------------------- -->
+    <div id="edit-form" class="edit-form">
+        <h1 style="text-align: center;">Edit Form</h1>
+        <div class="edit-form-content">
+            <div class="edit-form-content-2">
+                <h2>Personel Information</h2>
+                <div class="form-group">
+                    <label for="avatarInput">Avatar</label>
+                    <input type="file" id="avatarInput">
+                </div>
+                <div class="form-group">
+                    <label for="nameInput">Name</label>
+                    <input onkeyup="keyInputAndSetValue('name',event)" type="text" id="nameInput">
+                </div>
+                <div class="form-group">
+                    <label for="subTitleInput">Sub Title</label>
+                    <input onkeyup="keyInputAndSetValue('title',event)" type="text" id="subTitleInput">
+                </div>
+                <div class="form-group">
+                    <label for="dateOfBirthInput">Date Of Birth</label>
+                    <input onchange="changeBirthDateAndSetValue(event)" type="date" id="dateOfBirthInput">
+                </div>
+                <div class="form-group">
+                    <label for="phoneInput">Phone</label>
+                    <input onkeyup="keyInputAndSetValue('phone',event)" type="text" id="phoneInput">
+                </div>
+                <div class="form-group">
+                    <label for="mailInput">Mail</label>
+                    <input onkeyup="keyInputAndSetValue('mail',event)" type="text" id="mailInput">
+                </div>
+                <div class="form-group">
+                    <label for="addressInput">Address</label>
+                    <input onkeyup="keyInputAndSetValue('address',event)" type="text" id="addressInput">
+                </div>
+                <div class="form-group">
+                    <label for="aboutInput">About Me</label>
+                    <textarea style="resize: none; " onkeyup="keyInputAndSetValue('aboutMe',event)" type="text"
+                        id="aboutInput">
+                </textarea>
+                </div>
+            </div>
+
+
+            <div class="edit-form-content-2">
+                <h2>Languages <button class="btn-3" onclick="createLanguageEditFormDivField()">Add</button></h2>
+                <div id="Language-div">
+                </div>
+            </div>
+            <div class="edit-form-content-2">
+
+                <h2>References <button class="btn-3" onclick="createReferenceEditFormDivField()">Add</button></h2>
+                <div id="reference-div">
+                </div>
+            </div>
+            <!-- <div class="form-group-2">
+                <button class="btn-2" onclick="save()">Save</button>
+                <button class="btn-2" onclick="hideEditForm()">Cancel</button>
+            </div> -->
+            <div class="edit-form-content-2">
+                <h2>Certificates <button class="btn-3" onclick="createCertificateEditFormDivField()">Add</button></h2>
+                <div id="certificate-div">
+                </div>
+            </div>
+           
+            
+            <div class="edit-form-content-2">
+                <h2>Social Medias <button class="btn-3" onclick="createSocialMediasEditFormDivField()">Add</button></h2>
+                <div id="socialMedias-div">
+                </div>
+            </div>
+            
+
+        </div>
+        <div class="edit-form-content2">
+            <div class=" edit-form-content-2">
+                <h2>Skills <button class="btn-3" onclick="createSkillEditFormDivField()"> Add</button></h2>
+                <div id="skill-div">
+                </div>
+            </div>
+            <div class="edit-form-content-2">
+                <h2>Educations <button class="btn-3" onclick="createEducationsEditFormDivField()">Add</button></h2>
+                <div id="educations-div">
+                </div>
+            </div>
+            <div class="edit-form-content-2">
+                <h2>Work Expiriences <button class="btn-3" onclick="createWorkExpiriencesEditFormDivField()">Add</button>
+                </h2>
+                <div id="workExpiriences-div">
+                </div>
+            </div>
+        </div>
+        
+            <div class="save-cancel">
+                <button class="btn-2" onclick="save()">Save</button>
+                <button class="btn-2" onclick="hideEditForm()">Cancel</button>
+            </div>
+        
+       
+    </div>
+
+
+    <!-- -------------------------------------------------------------------------------------------------------------- -->
+
+
+
+
+
+
+
+
+    <div id="blogloading" style="display: none;">
+
+        <div class="page">
+            <div class="container">
+                <div class="left-container">
+                    <div class="profile-img">
+                        <img id="avatar" alt="">
+                    </div>
+                    <div class="left-my-header">
+                        <h1 id="name" class="my-header"></h1>
+                    </div>
+                    <div class="left-my-header">
+                        <h1 id="title" class="my-header"></h1>
+                    </div>
+                    <div class="left-header">
+                        <h1></h1>
+                        <h1></h1>
+                        <div class="contact">
+
+                            <ul class="personel-ul">
+                                <li>
+                                    <i></i>
+                                    <span id="phone"></span>
+                                </li>
+                                <li>
+
+                                    <span id="mail"></span>
+                                </li>
+                                <li>
+
+                                    <span id="address"></span>
+                                </li>
+                            </ul>
+
+                            <ul>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="left-header">
+                        <h1><span><i></i></span> </h1>
+                        <div id="aboutMe" class="">
+
+                        </div>
+                    </div>
+                    <div class="left-header">
+                        <h1></h1>
+                        <div class="skills">
+
+                            <ul id="skills">
+                                <div class="div-skills">
+
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="left-header" id="language">
+                        <h1></h1>
+
+                    </div>
+                </div>
+                <div class="right-container">
+                    <div class="right-header-1 full-context" id="workexperience">
+                    </div>
+
+                    <div class="right-header full-context" id="educations">
+
+                    </div>
+                    <div class="right-header full-context" id="certificate">
+                    </div>
+                    <div class="right-header full-context" id="reference">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex" id="spinner" style="display: none;">
+        <h1>Sayfa Yükleniyor...</h1>
+        <div class="spinner"></div>
+    </div>
+    <div class="d-flex" id="error" style="display: none;">
+        <h1>Opps Bir hatayla karşılaştık. İlgileniyoruz.</h1>
+        <button id="tryagain" onclick="tryAgain()">Tekrar deneyiniz</button>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/2875662356.js" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
