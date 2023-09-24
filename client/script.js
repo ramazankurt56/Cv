@@ -16,7 +16,7 @@ function get() {
             setMyInformation(myData.person);
             setMySkills(myData.skills)
             setMySocialMedias(myData.socialMedias)
-            setMyWorkExpiriences(myData.workExpiriences)
+            setMyWorkExperiences(myData.workExperiences)
             setMyEducations(myData.educations)  
             setMyCertificate(myData.certificate)
             setMyReference(myData.reference)
@@ -57,12 +57,15 @@ function setMyInformation(person) {
     document.getElementById("aboutInput").value = person.aboutMe;
 }
 function showEditForm(){
+    
     const blog = document.getElementById("main");
     blog.classList.add("main");
 
     const editForm = document.getElementById("edit-form");
     editForm.style.display = "block";
 }
+
+
 function hideEditForm(){
     const result = confirm("Are you sure cancel this changing?");
     if(!result) return;
@@ -404,10 +407,10 @@ element.remove();
 createEducationsElementForShowField(myData.educations);
 }
 //---------------------------------
-let workExpiriencesEditId=0;
-function createWorkExpiriencesElementForShowField(workExpiriences){
+let workExperiencesEditId=0;
+function createWorkExperiencesElementForShowField(workExperiences){
     let text = "<h1>WORK EXPIRIENCES</h1>";
-    for (let work of workExpiriences) {
+    for (let work of workExperiences) {
         text += `
         <div class="workexperience">
         <h4>${work.title}</h4>
@@ -419,50 +422,50 @@ function createWorkExpiriencesElementForShowField(workExpiriences){
     }
     document.getElementById("workexperience").innerHTML = text;
 }
-function setMyWorkExpiriences(workExpiriences)
+function setMyWorkExperiences(workExperiences)
 {
-    createWorkExpiriencesElementForShowField(workExpiriences);
+    createWorkExperiencesElementForShowField(workExperiences);
     let editText="";
-    for(let work of workExpiriences)
+    for(let work of workExperiences)
     {
-        workExpiriencesEditId++;
-        editText+=getWorkExpiriencesEditFormDivField(work);
+        workExperiencesEditId++;
+        editText+=getWorkExperiencesEditFormDivField(work);
        
-        document.getElementById("workExpiriences-div").innerHTML = editText;
+        document.getElementById("workExperiences-div").innerHTML = editText;
     }
 }
-function getWorkExpiriencesEditFormDivField(workExpiriences){
+function getWorkExperiencesEditFormDivField(workExperiences){
     
     return `
-    <div id="workExpiriencesEditDiv${workExpiriencesEditId}" data-id="${workExpiriences.id}" class="form-group">
-    <label for="workExpiriencesInput">Title</label>
-    <input onkeyup="keyupGetAndSetInputValue(event,'title','workExpiriences')" type="text" id="workExpiriencesInput${workExpiriencesEditId}" data-id="${workExpiriences.id}" value="${workExpiriences.title}"> 
-    <label for="workExpiriencesInput">Company</label>
-    <input onkeyup="keyupGetAndSetInputValue(event,'company','workExpiriences')" type="text" id="workExpiriencesInput${workExpiriencesEditId}" data-id="${workExpiriences.id}" value="${workExpiriences.company}"> 
-    <label for="workExpiriencesInput">Date</label>
-    <input onkeyup="keyupGetAndSetInputValue(event,'date','workExpiriences')" type="text" id="workExpiriencesInput${workExpiriencesEditId}" data-id="${workExpiriences.id}" value="${workExpiriences.date}"> 
-    <label for="workExpiriencesInput">Description</label>
-    <textarea style="resize: none; onkeyup="keyupGetAndSetInputValue(event,'description','workExpiriences')" type="text" id="workExpiriencesInput${workExpiriencesEditId}" data-id="${workExpiriences.id}" value="${workExpiriences.description}"></textarea>
-    <button class="btn" onclick="removeWorkExpiriencesForEditForm('workExpiriencesEditDiv${workExpiriencesEditId}')">Clear</button>
+    <div id="workExperiencesEditDiv${workExperiencesEditId}" data-id="${workExperiences.id}" class="form-group">
+    <label for="workExperiencesInput">Title</label>
+    <input onkeyup="keyupGetAndSetInputValue(event,'title','workExperiences')" type="text" id="workExperiencesInput${workExperiencesEditId}" data-id="${workExperiences.id}" value="${workExperiences.title}"> 
+    <label for="workExperiencesInput">Company</label>
+    <input onkeyup="keyupGetAndSetInputValue(event,'company','workExperiences')" type="text" id="workExperiencesInput${workExperiencesEditId}" data-id="${workExperiences.id}" value="${workExperiences.company}"> 
+    <label for="workExperiencesInput">Date</label>
+    <input onkeyup="keyupGetAndSetInputValue(event,'date','workExperiences')" type="text" id="workExperiencesInput${workExperiencesEditId}" data-id="${workExperiences.id}" value="${workExperiences.date}"> 
+    <label for="workExperiencesInput">Description</label>
+    <textarea style="resize: none; onkeyup="keyupGetAndSetInputValue(event,'description','workExperiences')" type="text" id="workExperiencesInput${workExperiencesEditId}" data-id="${workExperiences.id}" value="${workExperiences.description}"></textarea>
+    <button class="btn" onclick="removeWorkExperiencesForEditForm('workExperiencesEditDiv${workExperiencesEditId}')">Clear</button>
 </div>  
     `
 
 }
-function createWorkExpiriencesEditFormDivField(){
-    workExpiriencesEditId++;
-    const workExpiriences = {id:workExpiriencesEditId,title:"",company:"",date:"",description:""};
-    myData.workExpiriences.push(workExpiriences)
-    const text = getWorkExpiriencesEditFormDivField(workExpiriences);
-    document.getElementById("workExpiriences-div").innerHTML += text;
-    createWorkExpiriencesElementForShowField(myData.workExpiriences);
+function createWorkExperiencesEditFormDivField(){
+    workExperiencesEditId++;
+    const workExperiences = {id:workExperiencesEditId,title:"",company:"",date:"",description:""};
+    myData.workExperiences.push(workExperiences)
+    const text = getWorkExperiencesEditFormDivField(workExperiences);
+    document.getElementById("workExperiences-div").innerHTML += text;
+    createWorkExperiencesElementForShowField(myData.workExperiences);
 }
-function removeWorkExpiriencesForEditForm(elementId){ 
+function removeWorkExperiencesForEditForm(elementId){ 
 const element= document.getElementById(elementId);    
 const id=element.dataset["id"];
-const index = myData.workExpiriences.findIndex(p=> p.id == id);
-myData.workExpiriences.splice(index,1);
+const index = myData.workExperiences.findIndex(p=> p.id == id);
+myData.workExperiences.splice(index,1);
 element.remove();       
-createWorkExpiriencesElementForShowField(myData.workExpiriences);
+createWorkExperiencesElementForShowField(myData.workExperiences);
 }
 
 //-------------------------------------------------
@@ -559,8 +562,8 @@ function keyupGetAndSetInputValue(event,name,objectName){
             createCertificateElementForShowField(myData.certificate);
         } else if (objectName === "educations") {
             createEducationsElementForShowField(myData.educations);
-        }else if (objectName === "workExpiriences") {
-            createWorkExpiriencesElementForShowField(myData.workExpiriences);
+        }else if (objectName === "workExperiences") {
+            createWorkExperiencesElementForShowField(myData.workExperiences);
         }else if (objectName === "socialMedias") {
             createSocialMediasElementForShowField(myData.socialMedias);
             
